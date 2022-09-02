@@ -1,0 +1,22 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "name": "input",
+            "cwd": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/09_01_22",
+            "binaryPath": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/09_01_22/a.out",
+            "binaryArgs": ["< input.txt"],
+            "MIMode": "gdb",
+            "miDebuggerArgs": "'-ex' 'run < input.txt'",
+        },
+        {
+            "name": "noinput",
+            "cwd": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/09_01_22",
+            "binaryPath": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/09_01_22/a.out",
+            "binaryArgs": []
+        }
+    ],
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
