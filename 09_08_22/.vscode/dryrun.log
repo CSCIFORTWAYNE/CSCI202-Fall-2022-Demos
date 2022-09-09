@@ -1,0 +1,6 @@
+make all --dry-run --keep-going --print-directory
+make: Entering directory '/mnt/d/Users/FORTI/Documents/GitHub/CSCI202-Fall-2022-Demos/09_08_22'
+g++ -pedantic-errors book.cpp -o book.o -c -g
+g++ -pedantic-errors main.cpp book.o -g
+make: Leaving directory '/mnt/d/Users/FORTI/Documents/GitHub/CSCI202-Fall-2022-Demos/09_08_22'
+ 

@@ -18,8 +18,11 @@ class book
 public:
     book(string, string, string, string, string, genreType[], int);
     ~book();
+    book(const book&);
     void addGenre(genreType);
     friend std::ostream& operator<<(std::ostream&, const book&);
+    bool operator==(const book&);
+    bool operator!=(const book&);
 
 private:   
     std::string author;
