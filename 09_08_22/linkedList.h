@@ -3,84 +3,43 @@
 #include <stdexcept>
 
 
+template <class Type>
 struct nodeType
 {
-    int info;
-    nodeType * link;
+	Type * info;
+	nodeType<Type> *link;
+	~nodeType()
+	{
+		delete info;
+	}
 };
 
-class intLinkedList
+template <class Type>
+class linkedListType
 {
 public:
-    intLinkedList();
-    void insert(int newInfo);
-    void deleteNum(int del);
-    void deleteNode(nodeType *);
-    nodeType * search(int num);
+    linkedListType();
+    linkedListType(const linkedListType<Type> &otherList);
+    const linkedListType<Type>& operator=(const linkedListType<Type>&);
+    virtual void insert(const Type& newInfo) = 0;
+    virtual void deleteNode(const Type& deleteItem) = 0;
+    virtual bool search(int num) = 0;
+    ~linkedListType();
+    void initializeList();
+	bool isEmptyList() const;
+	void print() const;
+	int length() const;
+	void destroyList();
+	Type front() const;
+	Type back() const;
 
-
-private:    
+protected:    
     nodeType * head;
     nodeType * tail;
     int length;
+private: 
+	void copyList(const linkedListType<Type>& otherList);
 };
-
-intLinkedList::intLinkedList()
-{
-    this->head = nullptr;
-    this->tail = nullptr;
-    length = 0;
-}
-
-void intLinkedList::insert(int newInfo)
-{
-    nodeType * newNode = new nodeType;
-    newNode->info = newInfo;
-    newNode->link = nullptr;
-    if(head == nullptr)
-    {
-        head = newNode;
-        tail = newNode;
-    } 
-    else
-    {
-        tail->link = newNode;
-        tail = newNode;
-    }
-    length++;
-}
-
-void intLinkedList::deleteNum(int del)
-{
-    nodeType * current;
-    nodeType * previous;
-    current = head;
-    previous = head;
-
-    while (current != nullptr)
-    {
-        if(current->info == del)
-        {
-            break;
-        } 
-        else
-        {
-            previous = current;
-            current = current->link;
-        }
-    }
-
-    if(current == nullptr)
-    {
-        throw std::out_of_range("Item not found in list. Cannot delete.");
-    }
-
-    previous->link = current->link;
-    delete current;
-    length--;
-}
-
-
 
 
 
