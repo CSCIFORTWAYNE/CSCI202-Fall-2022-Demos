@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "book.h"
-#include "linkedList.h"
+#include "unorderedLinkedList.h"
 
 
 using namespace std;
@@ -9,19 +9,21 @@ using namespace std;
 
 int main()
 {
-    intLinkedList l;
+   unorderedLinkedList<int> l;
     l.insert(12);
     l.insert(3);
     l.insert(18);
     l.insert(62);
+    cout << l.print() << endl;
     try {
-        l.deleteNum(3);
-        l.deleteNum(32);
+        l.deleteNode(3);
+        l.deleteNode(32);
     }
     catch (out_of_range e)
     {
         cout << "Error: " << e.what() << endl;
     }
+    cout << l.print() << endl;
 
     /*book ** books;
     int numBooks;

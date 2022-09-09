@@ -16,7 +16,7 @@ public:
     const linkedListType<Type>& operator=(const linkedListType<Type>&);
     virtual void insert(const Type& newInfo) = 0;
     virtual void deleteNode(const Type& deleteItem) = 0;
-    virtual bool search(int num) = 0;
+    virtual bool search(const Type& searchItem) const = 0;
     ~linkedListType();
     void initializeList();
 	bool isEmptyList() const;
@@ -29,12 +29,17 @@ public:
 	linkedListIterator<Type> end();
 
 protected:    
-    nodeType * head;
-    nodeType * tail;
+    nodeType<Type> * head;
+    nodeType<Type> * tail;
     int count;
 private: 
 	void copyList(const linkedListType<Type>& otherList);
 };
+template<class Type>
+bool linkedListType<Type>::isEmptyList() const
+{
+	return (head == nullptr);
+}
 
 template <class Type>
 linkedListType<Type>::linkedListType()
@@ -55,7 +60,7 @@ void linkedListType<Type>::destroyList()
         delete temp;
     }
     tail = nullptr;
-    length = 0;
+    count = 0;
 }
 
 template <class Type>
@@ -67,7 +72,7 @@ void linkedListType<Type>::initializeList()
 template<class Type>
 string linkedListType<Type>::print() const
 {
-    ostringstream out;
+    std::ostringstream out;
     nodeType<Type> * current;
     current = head;
     while(current != nullptr)
@@ -81,14 +86,14 @@ string linkedListType<Type>::print() const
 template <class Type>
 int linkedListType<Type>::length() const
 {
-	return length;
+	return count;
 }
 
 template <class Type>
 Type* linkedListType<Type>::front() const
 {
 	if(this->isEmptyList())
-		throw out_of_range("Cannot get first item of an empty list");
+		throw std::out_of_range("Cannot get first item of an empty list");
 	return head->info;
 }
 
@@ -96,7 +101,7 @@ template <class Type>
 Type* linkedListType<Type>::back() const
 {
 	if(this->isEmptyList())
-		throw out_of_range("Cannot get last item of an empty list");
+		throw std::out_of_range("Cannot get last item of an empty list");
 	return tail->info;
 }
 
@@ -117,7 +122,38 @@ linkedListIterator<Type> linkedListType<Type>::end()
 template <class Type>
 void linkedListType<Type>::copyList(const linkedListType<Type>& otherList)
 {
-    
+    nodeType<Type> *newNode;
+    nodeType<Type> *current;
+    if(!this->isEmptyList())
+    {
+        destroyList();
+    }
+    if(otherList.isEmptyList())
+    {
+        head = nullptr;
+        tail = nullptr;
+        count = 0;
+    }
+    else
+    {
+        current = otherList.head;
+        count = otherList.count;
+        this->head = new nodeType<Type>;
+        head->info = new Type(*(current->info));
+        head->link = nullptr;
+        tail = head;
+        current->link;
+        while(current != nullptr)
+        {
+            newNode = new nodeType<Type>;
+            newNode->info = new Type(*(current->info));
+            newNode->link = nullptr;
+            tail->link = newNode;
+            tail = newNode;
+
+            current = current->link;
+        }
+    }
 }
 
 template <class Type>
