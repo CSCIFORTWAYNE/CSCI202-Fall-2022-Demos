@@ -15,6 +15,20 @@ book::book(string author, string title, string subject,
     }
     this->numGenres = numGenres;
 }
+book::book(const book& othBook)
+{
+    this->author = othBook.author;
+    this->title = othBook.title;
+    this->subject = othBook.subject;
+    this->publisher = othBook.publisher;
+    this->isbn = othBook.isbn;
+    this->genres = new genreType[othBook.numGenres];
+    for(int i = 0; i < othBook.numGenres; i++)
+    {
+        this->genres[i] = othBook.genres[i];
+    }
+    this->numGenres = othBook.numGenres;
+}
 
 
 book::~book()
@@ -55,4 +69,14 @@ std::ostream& operator<<(std::ostream& out, const book& b)
     out << genreStr[b.genres[b.numGenres - 1]] << std::endl;
     out << std::setw(40) << std::setfill('-') << "-" << std::endl;
     return out;
+}
+
+bool book::operator==(const book& othBook)
+{
+    return (this->author == othBook.author && this->title == othBook.title) || (this->isbn == othBook.isbn);
+}
+
+bool book::operator!=(const book& othBook)
+{
+    return (this->author != othBook.author || this->title != othBook.title) && (this->isbn != othBook.isbn);
 }

@@ -24,14 +24,13 @@ int main()
         cout << "Error: " << e.what() << endl;
     }
     cout << l.print() << endl;
-
-    /*book ** books;
+    unorderedLinkedList<book> books;
+    
     int numBooks;
     cout << "How many books do you want to enter? ";
     cin >> numBooks;
     cout << endl;
 
-    books = new book*[numBooks];
 
     //input validation goes here 
 
@@ -103,11 +102,11 @@ int main()
         getline(cin >> ws, ISBN);
         cout << endl;
 
-
-       books[i] = new book(author, title, subject, publisher, 
+        book * temp =  new book(author, title, subject, publisher, 
         ISBN, g, numGenres); //create the book using new
-        //books[i]->addGenre(FICTION);
-        cout << *books[i] << endl;
+        books.insert(*temp); //this will copy the book so we can delete the pointer
+        delete temp;
+        cout << books.print();
         
         //books.push_back(mybook);
     }
