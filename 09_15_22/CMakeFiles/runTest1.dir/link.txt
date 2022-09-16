@@ -1,0 +1,1 @@
+/usr/bin/c++      -Wl,--wrap=main -rdynamic CMakeFiles/runTest1.dir/test.cpp.o  -o runTest1  -Wl,-rpath,/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22 -Wl,-Bstatic -lgtest -Wl,-Bdynamic libstudent.so -lpthread 

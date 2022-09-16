@@ -139,5 +139,21 @@ stackType<t>::~stackType()
     stackTop = 0;
 }
 
+template<class t>
+stackType<t>::stackType(const stackType& othStack)
+{
+    list = nullptr;
+    stackTop = 0;
+    copyStack(othStack);
+}
+
+template <class t>
+const stackType<t>& stackType<t>::operator=(const stackType<t>& othStack)
+{
+    if(this != othStack)
+        copyStack(othStack);
+    return *this;
+}
+
 
 #endif

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22/book.h
+string
+-
+iostream
+-
+iomanip
+-
+
+/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22/test.cpp
+gtest/gtest.h
+-
+book.h
+/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22/book.h
+

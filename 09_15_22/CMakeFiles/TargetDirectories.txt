@@ -1,0 +1,4 @@
+/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22/CMakeFiles/rebuild_cache.dir
+/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22/CMakeFiles/edit_cache.dir
+/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22/CMakeFiles/runTest1.dir
+/home/avenable11/CSCI202-Fall-2022-Demos/09_15_22/CMakeFiles/student.dir
