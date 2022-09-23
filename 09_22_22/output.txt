@@ -1,0 +1,312 @@
+Added to queue: 384
+Removing from queue: 384
+Added to queue: 887
+Added to queue: 778
+Removing from queue: 887
+Added to queue: 916
+Removing from queue: 778
+Added to queue: 794
+Removing from queue: 916
+Added to queue: 336
+Removing from queue: 794
+Added to queue: 387
+Added to queue: 493
+Added to queue: 650
+Removing from queue: 336
+Added to queue: 422
+Removing from queue: 387
+Adding book 2
+Adding book 1
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Adding book 2
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Adding book 1
+Adding book 2
+Adding book 1
+Adding book 1
+Adding book 2
+Adding book 2
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Adding book 1
+Adding book 1
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Adding book 1
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Adding book 1
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 2
+Adding book 2
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 2
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 2
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Adding book 2
+Adding book 2
+Adding book 1
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 2
+Removing book from queue: 
+Title: A Wrinkle in Time
+Author: Madeleine L'Engle
+Genre: Fantasy
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 2
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 2
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+
+Adding book 1
+Adding book 1
+Adding book 1
+Adding book 2
+Adding book 1
+Removing book from queue: 
+Title: Where the Wild things are
+Author: Maurice Sendak
+Genre: Children's Picture Book
+----------------------------------------
+

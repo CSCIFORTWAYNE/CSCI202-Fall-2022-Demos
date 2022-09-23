@@ -1,4 +1,8 @@
-all:
-	g++ -pedantic-errors -g main.cpp -o a.out
+all: book.o
+	g++ -pedantic-errors main.cpp book.o -g -o a.out
+
+book.o: book.cpp book.h
+	g++ -pedantic-errors book.cpp -o book.o -c -g
+
 clean:
 	rm a.out
