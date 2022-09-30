@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/avenable11/CSCI202-Fall-2022-Demos/09_29_22",
+            "binaryPath": "/home/avenable11/CSCI202-Fall-2022-Demos/09_29_22/a.out",
+            "binaryArgs": []
+        }
+    ]
+}
