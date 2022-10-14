@@ -13,6 +13,7 @@ const int ARRAY = 10;
 void printResult(int index, int searchTerm, int comp);
 int getInt(std::string);
 int fibNum(int, int, int, int[]);
+void moveDisks(int, char source, char destination, char spare);
 
 int main()
 {
@@ -32,6 +33,14 @@ int main()
         sequence[i] = 0;
     }
     fibNum(firstNum, secondNum, n, sequence);
+
+    for(int i = 0; i < n; i++)
+    {
+        std::cout << sequence[i] << " ";
+    }
+    std::cout << std::endl;
+
+    moveDisks(8, 'A', 'C', 'B');
     
 
     return 0;
@@ -54,6 +63,17 @@ int fibNum(int first, int second, int n, int seq[])
             seq[n-1] = fibNum(first, second, n-1, seq) + fibNum(first, second, n-2, seq);
         }
         return seq[n-1];
+    }
+}
+
+void moveDisks(int count, char source, char destination, char spare)
+{
+    if(count > 0)
+    {
+        moveDisks(count - 1, source, spare, destination);
+        std::cout << "Move disk " << count << " from " 
+        << source << " to " << destination << "." << std::endl;
+        moveDisks(count-1, spare, destination, source);
     }
 }
 
