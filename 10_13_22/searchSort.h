@@ -1,6 +1,7 @@
 #ifndef SEARCH_H
 #define SEARCH_H
 #include <iostream>
+#include "unorderedLinkedList.h"
 /*********SEARCH ALGORITHMS**********/
 template <class elemType>
 int seqSearch(const elemType list[], int length, const elemType &item)
@@ -213,6 +214,37 @@ void mergeSort(elemType list[], int length)
             std::cout << list[i] << " ";
         }
         std::cout << std::endl;
+    }
+}
+
+template<class Type>
+int partition(unorderedLinkedList<Type>& list, int low, int high, int(*func)(Type&, Type&))
+{
+    Type pivot = list[high];
+    int i = low - 1;
+    for(int j = low; j <= high - 1; j++) 
+    {
+        Type item = list[j];
+        if(func(item, pivot) < 0)
+        {
+            i++;
+            list.swap(i, j);
+        }
+        
+    }
+    i++;
+    list.swap(i, high);
+    return i;
+}
+
+template<class Type>
+void quickSort(unorderedLinkedList<Type>& list, int low, int high, int(*func)(Type&, Type&))
+{
+    if(low < high) 
+    {
+        int pi = partition(list, low, high, func);
+        quickSort(list, low, pi -1, func);
+        quickSort(list, pi + 1, high, func);
     }
 }
 

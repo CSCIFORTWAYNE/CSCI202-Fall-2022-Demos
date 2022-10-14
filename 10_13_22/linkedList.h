@@ -77,7 +77,7 @@ string linkedListType<Type>::print() const
     current = head;
     while(current != nullptr)
     {
-        out << *(current->info) << " ";
+        out << *(current->info) << std::endl;
         current = current->link;
     }
     return out.str();

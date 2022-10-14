@@ -1,5 +1,6 @@
 #ifndef UNORDERED_H
 #define UNORDERED_H
+#include <stdexcept>
 #include "linkedList.h"
 
 template <class Type>
@@ -9,6 +10,8 @@ class unorderedLinkedList: public linkedListType<Type>
 		bool search(const Type& searchItem) const;
 		void insert(const Type& newItem);
 		void deleteNode(const Type& deleteItem);
+		Type operator[](int i);
+		void swap(int, int);
 	
 };
 
@@ -102,6 +105,82 @@ void unorderedLinkedList<Type>::deleteNode(const Type& deleteItem)
 	}
 }
 
+template<class Type>
+Type unorderedLinkedList<Type>::operator[](int i)
+{
+	if(i > this->count -1 || i < 0)
+		throw std::out_of_range("Position is outside fo the linked list");
+	linkedListIterator<Type> it = this->begin();
+	for (int j = 0; j < i; j++)
+	{
+		++it;
+	}
+	return *it;
+}
 
+template<class Type>
+void unorderedLinkedList<Type>::swap(int pos1, int pos2)
+{
+	nodeType<Type>* item1;
+	nodeType<Type>* item2;
+	nodeType<Type>* temp;
+	nodeType<Type>* trail1;
+	nodeType<Type>* trail2;
+	temp = this->head;
+	trail1 = nullptr;
+	for(int i = 0; i < pos1; i++)
+	{
+		trail1 = temp;
+		temp = temp->link;
+	}
+	item1 = temp;
+	temp = this->head;
+	trail2 = nullptr;
+	for(int i = 0; i < pos2; i++)
+	{
+		trail2 = temp;
+		temp = temp->link;
+	}
+	item2 = temp;
+	
+	
+		if(item1->link == item2)
+		{
+			temp = item1;
+		}
+		else
+		{
+			temp = item1->link;
+			if(trail2 != nullptr)
+				trail2->link = item1;
+		}
+		if(item2->link == item1)
+			item1->link = item2;
+		else 
+		{
+			item1->link = item2->link;
+			if(trail1 != nullptr)
+				trail1->link = item2;
+		}
+		item2->link = temp;
+		
+		
+	if(item1 == this->head)
+	{
+		this->head = item2;
+	}
+	else if(item2 == this->head)
+	{
+		this->head = item1;
+	}
+	if(item1 == this->tail)
+	{
+		this->tail = item2;
+	}
+	else if(item2 == this->tail)
+	{
+		this->tail = item1;
+	}
+}
 
 #endif
