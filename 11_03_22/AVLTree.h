@@ -3,7 +3,9 @@
 #include <sstream>
 #include <string>
 #include <stdexcept>
+#include <iostream>
 #include "binarySearchTree.h"
+#include "linkedQueue.h"
 
 template <class T>
 struct AVLNode
@@ -19,7 +21,7 @@ template <class T>
 class AVLTree
 {
 public:
-    const AVLTreeType<T> &operator=(const AVLTreeType<T> &);
+    const AVLTree<T> &operator=(const AVLTree<T> &);
     bool isEmpty() const;
     std::string inorderTraversal() const;
     std::string preorderTraversal() const;
@@ -32,10 +34,10 @@ public:
     void insert(const T &insertItem);
     void deleteNode(const T &deleteItem);
     template <class Type>
-    friend ostream &operator<<(ostream &out, const AVLTreeType<Type> &tree);
-    AVLTreeType(const AVLTreeType<T> &otherTree);
-    AVLTreeType();
-    ~AVLTreeType();
+    friend std::ostream &operator<<(std::ostream &out, const AVLTree<Type> &tree);
+    AVLTree(const AVLTree<T> &otherTree);
+    AVLTree();
+    ~AVLTree();
 
 protected:
     AVLNode<T> *root;
@@ -51,7 +53,7 @@ private:
     int nodeCount(AVLNode<T> *p) const;
     int leavesCount(AVLNode<T> *p) const;
     bool search(const T &searchItem, AVLNode<T> *p) const;
-    string printTree() const;
+    std::string printTree() const;
     void rotateToLeft(AVLNode<T> *&root);
     void rotateToRight(AVLNode<T> *&root);
     void balanceFromLeft(AVLNode<T> *&root);
@@ -67,7 +69,7 @@ int AVLTree<T>::height(AVLNode<T> *p) const
         return 0;
     }
     else
-        return 1 + max(height(p->llink), height(p->rLink));
+        return 1 + max(height(p->lLink), height(p->rLink));
 }
 
 template <class T>
@@ -88,7 +90,7 @@ int AVLTree<T>::treeHeight() const
 template <class T>
 void AVLTree<T>::rotateToRight(AVLNode<T> *&root)
 {
-    AVLNode *p;
+    AVLNode<T> *p;
     if (root == nullptr)
         throw std::out_of_range("Cannot rotate empty node.");
     else if (root->lLink == nullptr)
@@ -105,7 +107,7 @@ void AVLTree<T>::rotateToRight(AVLNode<T> *&root)
 template <class T>
 void AVLTree<T>::rotateToLeft(AVLNode<T> *&root)
 {
-    AVLNode *p;
+    AVLNode<T> *p;
     if (root == nullptr)
         throw std::out_of_range("Cannot rotate empty node.");
     else if (root->rLink == nullptr)
@@ -161,8 +163,8 @@ void AVLTree<T>::balanceFromRight(AVLNode<T> *&root)
 template <class T>
 void AVLTree<T>::balanceFromLeft(AVLNode<T> *&root)
 {
-    AVLNode *p;
-    AVLNode *w;
+    AVLNode<T> *p;
+    AVLNode<T> *w;
     p = root->lLink;
     switch (p->bfactor)
     {
@@ -196,4 +198,143 @@ void AVLTree<T>::balanceFromLeft(AVLNode<T> *&root)
     }
 }
 
+template <class T>
+void AVLTree<T>::insert(const T& newItem)
+{
+    bool isTaller = false;
+    AVLNode<T> * newNode;
+    newNode = new AVLNode<T>;
+    newNode->info = new T(newItem);
+    newNode->bfactor = 0;
+    newNode->lLink = nullptr;
+    newNode->rLink = nullptr;
+
+    insertIntoAVL(root, newNode, isTaller);
+}
+
+template <class T>
+void AVLTree<T>::insertIntoAVL(AVLNode<T>*&root, AVLNode<T>* newNode, bool& isTaller)
+{
+    if(root == nullptr)
+    {
+        root = newNode;
+        isTaller = true;
+    }
+    else if(*root->info == *newNode->info)
+        throw std::invalid_argument("No duplicates allowed.");
+    else if(*root->info > *newNode->info)
+    {
+        insertIntoAVL(root->lLink, newNode, isTaller);
+        if(isTaller)
+        {
+            switch(root->bfactor)
+            {
+                case -1:
+                    balanceFromLeft(root);
+                    isTaller = false;
+                    break;
+                case 0:
+                    root->bfactor = -1;
+                    isTaller = true;
+                    break;
+                case 1:
+                    root->bfactor = 0;
+                    isTaller = false;
+            }
+        }
+    }
+    else 
+    {
+        insertIntoAVL(root->rLink, newNode, isTaller);
+        if(isTaller)
+        {
+            switch(root->bfactor)
+            {
+                case -1:
+                    root->bfactor = 0;
+                    isTaller = false;
+                    break;
+                case 0:
+                    root->bfactor = 1;
+                    isTaller = true;
+                    break;
+                case 1:
+                    balanceFromRight(root);
+                    isTaller = false;
+            }
+        }
+    }
+}
+
+template<class T>
+std::string AVLTree<T>::printTree() const
+{
+	std::ostringstream out;
+	struct nodeDepth
+	{
+		AVLNode<T>* n;
+    	int lvl;
+    	//node_depth(node<T>* n_, int lvl_) : n(n_), lvl(lvl_) {}
+	};
+	int depth = height(root);
+	int last_lvl = 0;
+	int offset = (1 << depth) - 1;
+	linkedQueueType<nodeDepth> nodes;
+	nodeDepth rootDepth;
+	rootDepth.n = root;
+	rootDepth.lvl = last_lvl;
+	nodes.enqueue(rootDepth);
+	while(!nodes.isEmptyQueue())
+	{
+		nodeDepth current = nodes.front();
+		if(last_lvl != current.lvl)
+		{
+			out << std::endl;
+			last_lvl = current.lvl;
+    		offset = (1 << (depth - current.lvl)) - 1;
+			
+		}
+		if(current.n != nullptr)
+		{
+			out << std::setw(offset) << " ";
+			out << std::setw(3) << *current.n->info;
+			out << std::setw(offset) << " ";
+			nodeDepth left;
+			nodeDepth right;
+			left.n = current.n->lLink;
+			right.n = current.n->rLink;
+			left.lvl = last_lvl + 1;
+			right.lvl = last_lvl + 1;
+			nodes.enqueue(left);
+			nodes.enqueue(right);
+		} 
+		else
+		{
+			out << std::setw(offset) << " " << "   ";
+			out << std::setw(offset) << " ";
+		}
+		nodes.dequeue();
+	}
+	out << std::endl;
+	
+	return out.str();
+}
+
+template <class elemType>
+std::ostream& operator<<(std::ostream& out, const AVLTree<elemType>& tree)
+{
+	out << tree.printTree();
+	return out;
+}
+template <class T>
+AVLTree<T>::AVLTree()
+{
+	root = nullptr;
+}
+
+template <class T>
+AVLTree<T>::~AVLTree()
+{
+//	destroy(root);
+}
 #endif
