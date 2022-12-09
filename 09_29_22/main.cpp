@@ -3,6 +3,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#ifdef _WIN32
+#include <Windows.h>
+#endif
 #include "card.h"
 #include "stackType.h"
 #include "queue.h"
@@ -14,6 +17,10 @@ void dealCards(stackType<card> &, unorderedLinkedList<card>[], int);
 
 int main()
 {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+    std
     srand(time(0));
     std::set<card> deck;
     setupDeck(deck);
