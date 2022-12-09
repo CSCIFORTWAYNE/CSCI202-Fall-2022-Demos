@@ -4,6 +4,11 @@
             "cwd": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/12_08_22",
             "binaryPath": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/12_08_22/a.out",
             "binaryArgs": []
+        },
+        {
+            "cwd": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/12_08_22",
+            "binaryPath": "/home/avenable11/CSCI 202 FA 22/CSCI202-Fall-2022-Demos/12_08_22/main2",
+            "binaryArgs": []
         }
     ]
 }
